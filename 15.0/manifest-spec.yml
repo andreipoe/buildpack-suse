@@ -1,0 +1,11 @@
+image: andreipoe/buildpack-suse:15.0
+
+manifests:
+  - image: andreipoe/buildpack-suse:15.0-aarch64
+    platform:
+      architecture: arm64
+      os: linux
+  - image: andreipoe/buildpack-suse:15.0-amd64
+    platform:
+      architecture: amd64
+      os: linux
