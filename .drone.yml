@@ -14,7 +14,7 @@ steps:
       repo: andreipoe/buildpack-suse
       tags:
         - 15.0-aarch64
-      dockerfile: 15.0/Dockerfile
+      dockerfile: 15.0/Dockerfile.aarch64
       username: andreipoe
       password:
         from_secret: docker_token
@@ -171,6 +171,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 0e98173e042490deaf67fe3e03776d734f27f54e6ee3f3c052b311f7b64afc56
+hmac: 9d23510258e1b98402220f15def1919cae25d0f1d80986142e3659d7ed1752bb
 
 ...
