@@ -142,6 +142,8 @@ steps:
       username: andreipoe
       password:
         from_secret: docker_token
+    when:
+      status: [success, failure]
   - name: manifest-15.2
     image: plugins/manifest
     settings:
@@ -150,6 +152,8 @@ steps:
       username: andreipoe
       password:
         from_secret: docker_token
+    when:
+      status: [success, failure]
   - name: manifest-15.3
     image: plugins/manifest
     settings:
@@ -158,6 +162,8 @@ steps:
       username: andreipoe
       password:
         from_secret: docker_token
+    when:
+      status: [success, failure]
 
 depends_on: [build-aarch64, build-amd64]
 trigger:
@@ -165,6 +171,6 @@ trigger:
 
 ---
 kind: signature
-hmac: b727c93f399c898dd477ff3698b593e163a2ee2c9f81bf75f40dc51749750f00
+hmac: 0e98173e042490deaf67fe3e03776d734f27f54e6ee3f3c052b311f7b64afc56
 
 ...
