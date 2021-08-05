@@ -13,6 +13,7 @@ RUN zypper install -y\
     gcc-c++ \
     git \
     glib2-devel \
+    gzip \
     kernel-devel \
     libcurl-devel \
     libevent-devel \
@@ -27,7 +28,9 @@ RUN zypper install -y\
     postgresql-devel \
     readline-devel \
     sqlite3-devel \
+    tar \
     wget \
     which \
+    xz \
     zlib-devel \
     && zypper clean --all
