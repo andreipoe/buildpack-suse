@@ -164,6 +164,22 @@ steps:
         from_secret: docker_token
     when:
       status: [success, failure]
+  - name: healthcheck
+    image: ubuntu
+    environment:
+      HEALTHCHECKS_URL:
+        from_secret: healthchecks_url
+    commands:
+      - apt-get update
+      - apt-get -y install curl
+      - |
+        if [ ${DRONE_BUILD_STATUS} = success ]; then
+          curl --retry 3 $${HEALTHCHECKS_URL}
+        else
+          curl --retry 3 $${HEALTHCHECKS_URL}/fail
+        fi
+    when:
+      status: [success, failure]
 
 depends_on: [build-aarch64, build-amd64]
 trigger:
@@ -171,6 +187,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 9d23510258e1b98402220f15def1919cae25d0f1d80986142e3659d7ed1752bb
+hmac: d56a86fd48769736871111dfb9acb240fcb808616fbd29a62c650ad265ec1048
 
 ...
