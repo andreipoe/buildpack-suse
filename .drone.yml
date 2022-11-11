@@ -8,6 +8,18 @@ platform:
   os: linux
 
 steps:
+  - name: build-latest
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15-aarch64
+        - latest-aarch64
+      dockerfile: 15/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
   - name: build-15.0
     image: plugins/docker
     settings:
@@ -58,6 +70,19 @@ steps:
     depends_on: [clone]
     when:
       status: [success, failure]
+  - name: build-15.4
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.4-aarch64
+      dockerfile: 15.4/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
 
 ---
 kind: pipeline
@@ -69,6 +94,18 @@ platform:
   os: linux
 
 steps:
+  - name: build-latest
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15-amd64
+        - latest-amd64
+      dockerfile: 15/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
   - name: build-15.0
     image: plugins/docker
     settings:
@@ -119,6 +156,19 @@ steps:
     depends_on: [clone]
     when:
       status: [success, failure]
+  - name: build-15.4
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.4-amd64
+      dockerfile: 15.4/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
 
 ---
 kind: pipeline
@@ -126,6 +176,14 @@ type: docker
 name: multiarch-manifest
 
 steps:
+  - name: manifest-latest
+    image: plugins/manifest
+    settings:
+      target: andreipoe/buildpack-centos
+      spec: 15/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
   - name: manifest-15.0
     image: plugins/manifest
     settings:
@@ -164,6 +222,16 @@ steps:
         from_secret: docker_token
     when:
       status: [success, failure]
+  - name: manifest-15.4
+    image: plugins/manifest
+    settings:
+      target: andreipoe/buildpack-centos
+      spec: 15.4/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    when:
+      status: [success, failure]
   - name: healthcheck
     image: ubuntu
     environment:
@@ -187,6 +255,6 @@ trigger:
 
 ---
 kind: signature
-hmac: d56a86fd48769736871111dfb9acb240fcb808616fbd29a62c650ad265ec1048
+hmac: db7861c9e8af8f7ef2a2d6827df77df314f2ddc8be16a2d4ff4fffb819f66dd9
 
 ...
