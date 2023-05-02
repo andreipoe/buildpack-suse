@@ -179,7 +179,6 @@ steps:
   - name: manifest-latest
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15/manifest-spec.yml
       username: andreipoe
       password:
@@ -187,7 +186,6 @@ steps:
   - name: manifest-15.0
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15.0/manifest-spec.yml
       username: andreipoe
       password:
@@ -195,7 +193,6 @@ steps:
   - name: manifest-15.1
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15.1/manifest-spec.yml
       username: andreipoe
       password:
@@ -205,7 +202,6 @@ steps:
   - name: manifest-15.2
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15.2/manifest-spec.yml
       username: andreipoe
       password:
@@ -215,7 +211,6 @@ steps:
   - name: manifest-15.3
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15.3/manifest-spec.yml
       username: andreipoe
       password:
@@ -225,7 +220,6 @@ steps:
   - name: manifest-15.4
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-centos
       spec: 15.4/manifest-spec.yml
       username: andreipoe
       password:
@@ -255,6 +249,6 @@ trigger:
 
 ---
 kind: signature
-hmac: db7861c9e8af8f7ef2a2d6827df77df314f2ddc8be16a2d4ff4fffb819f66dd9
+hmac: 4fc1445af4f834342d5a84f4aeeb34a0372cbc7e640f06e17fa08e0636a81ad6
 
 ...
