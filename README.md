@@ -14,5 +14,7 @@ The following SUSE versions are supported:
 * [`15.1`](https://github.com/andreipoe/buildpack-suse/blob/master/15.1/Dockerfile)
 * [`15.2`](https://github.com/andreipoe/buildpack-suse/blob/master/15.2/Dockerfile)
 * [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.3/Dockerfile)
-* [`15.4`](https://github.com/andreipoe/buildpack-suse/blob/master/15/Dockerfile)
+* [`15.4`](https://github.com/andreipoe/buildpack-suse/blob/master/15.4/Dockerfile)
+* [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.5/Dockerfile)
+* [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.6/Dockerfile)
 * [`15` (`latest`)](https://github.com/andreipoe/buildpack-suse/blob/master/15/Dockerfile)

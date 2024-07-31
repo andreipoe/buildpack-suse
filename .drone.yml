@@ -83,6 +83,32 @@ steps:
     depends_on: [clone]
     when:
       status: [success, failure]
+  - name: build-15.5
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.5-aarch64
+      dockerfile: 15.5/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-15.6
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.6-aarch64
+      dockerfile: 15.6/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
 
 ---
 kind: pipeline
@@ -169,6 +195,32 @@ steps:
     depends_on: [clone]
     when:
       status: [success, failure]
+  - name: build-15.5
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.5-amd64
+      dockerfile: 15.5/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-15.6
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.6-amd64
+      dockerfile: 15.6/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
 
 ---
 kind: pipeline
@@ -226,6 +278,24 @@ steps:
         from_secret: docker_token
     when:
       status: [success, failure]
+  - name: manifest-15.5
+    image: plugins/manifest
+    settings:
+      spec: 15.5/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    when:
+      status: [success, failure]
+  - name: manifest-15.6
+    image: plugins/manifest
+    settings:
+      spec: 15.6/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    when:
+      status: [success, failure]
   - name: healthcheck
     image: ubuntu
     environment:
@@ -249,6 +319,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 4fc1445af4f834342d5a84f4aeeb34a0372cbc7e640f06e17fa08e0636a81ad6
+hmac: a81354d004790728c37e6b6c8fbc58396da1bbcbf8d818fe0e00caf40fe1cbf1
 
 ...
