@@ -9,6 +9,7 @@ RUN zypper install -y\
     libbz2-devel \
     cmake \
     curl \
+    dirmngr \
     gcc \
     gcc-c++ \
     git \
@@ -28,6 +29,7 @@ RUN zypper install -y\
     postgresql-devel \
     readline-devel \
     sqlite3-devel \
+    stow \
     tar \
     wget \
     which \
