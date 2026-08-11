@@ -1,7 +1,7 @@
-FROM opensuse/leap:15.6
+FROM opensuse/leap:16.0
 LABEL maintainer "Andrei Poenaru <docker@simd.stream>"
 
-RUN zypper install -y --allow-downgrade \
+RUN zypper install -y\
     autoconf \
     automake \
     byacc \

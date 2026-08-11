@@ -1,10 +1,9 @@
-FROM opensuse/leap:15.6
+FROM registry.suse.com/suse/sle15:15.7
 LABEL maintainer "Andrei Poenaru <docker@simd.stream>"
 
-RUN zypper install -y --allow-downgrade \
+RUN zypper install -y \
     autoconf \
     automake \
-    byacc \
     bzip2 \
     libbz2-devel \
     cmake \
@@ -29,7 +28,6 @@ RUN zypper install -y --allow-downgrade \
     postgresql-devel \
     readline-devel \
     sqlite3-devel \
-    stow \
     tar \
     wget \
     which \

@@ -8,13 +8,9 @@ It comes with many common build dependencies pre-installed.
 
 ## Versions
 
-The following SUSE versions are supported:
+The following SUSE versions are currently built regularly:
 
-* [`15.0`](https://github.com/andreipoe/buildpack-suse/blob/master/15.0/Dockerfile)
-* [`15.1`](https://github.com/andreipoe/buildpack-suse/blob/master/15.1/Dockerfile)
-* [`15.2`](https://github.com/andreipoe/buildpack-suse/blob/master/15.2/Dockerfile)
-* [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.3/Dockerfile)
-* [`15.4`](https://github.com/andreipoe/buildpack-suse/blob/master/15.4/Dockerfile)
-* [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.5/Dockerfile)
-* [`15.3`](https://github.com/andreipoe/buildpack-suse/blob/master/15.6/Dockerfile)
+* [`15.6`](https://github.com/andreipoe/buildpack-suse/blob/master/15.6/Dockerfile)
+* [`15.7`](https://github.com/andreipoe/buildpack-suse/blob/master/15.7/Dockerfile)
 * [`15` (`latest`)](https://github.com/andreipoe/buildpack-suse/blob/master/15/Dockerfile)
+* [`16.0`](https://github.com/andreipoe/buildpack-suse/blob/master/16.0/Dockerfile)

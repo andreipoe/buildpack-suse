@@ -20,82 +20,6 @@ steps:
       password:
         from_secret: docker_token
     depends_on: [clone]
-  - name: build-15.0
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.0-aarch64
-      dockerfile: 15.0/Dockerfile.aarch64
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-  - name: build-15.1
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.1-aarch64
-      dockerfile: 15.1/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.2
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.2-aarch64
-      dockerfile: 15.2/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.3
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.3-aarch64
-      dockerfile: 15.3/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.4
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.4-aarch64
-      dockerfile: 15.4/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.5
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.5-aarch64
-      dockerfile: 15.5/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
   - name: build-15.6
     image: plugins/docker
     settings:
@@ -103,6 +27,32 @@ steps:
       tags:
         - 15.6-aarch64
       dockerfile: 15.6/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-15.7
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.7-aarch64
+      dockerfile: 15.7/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-16.0
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 16.0-aarch64
+      dockerfile: 16.0/Dockerfile
       username: andreipoe
       password:
         from_secret: docker_token
@@ -132,82 +82,6 @@ steps:
       password:
         from_secret: docker_token
     depends_on: [clone]
-  - name: build-15.0
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.0-amd64
-      dockerfile: 15.0/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-  - name: build-15.1
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.1-amd64
-      dockerfile: 15.1/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.2
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.2-amd64
-      dockerfile: 15.2/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.3
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.3-amd64
-      dockerfile: 15.3/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.4
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.4-amd64
-      dockerfile: 15.4/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
-  - name: build-15.5
-    image: plugins/docker
-    settings:
-      repo: andreipoe/buildpack-suse
-      tags:
-        - 15.5-amd64
-      dockerfile: 15.5/Dockerfile
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    depends_on: [clone]
-    when:
-      status: [success, failure]
   - name: build-15.6
     image: plugins/docker
     settings:
@@ -215,6 +89,32 @@ steps:
       tags:
         - 15.6-amd64
       dockerfile: 15.6/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-15.7
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 15.7-amd64
+      dockerfile: 15.7/Dockerfile
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    depends_on: [clone]
+    when:
+      status: [success, failure]
+  - name: build-16.0
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-suse
+      tags:
+        - 16.0-amd64
+      dockerfile: 16.0/Dockerfile
       username: andreipoe
       password:
         from_secret: docker_token
@@ -235,62 +135,28 @@ steps:
       username: andreipoe
       password:
         from_secret: docker_token
-  - name: manifest-15.0
-    image: plugins/manifest
-    settings:
-      spec: 15.0/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-  - name: manifest-15.1
-    image: plugins/manifest
-    settings:
-      spec: 15.1/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    when:
-      status: [success, failure]
-  - name: manifest-15.2
-    image: plugins/manifest
-    settings:
-      spec: 15.2/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    when:
-      status: [success, failure]
-  - name: manifest-15.3
-    image: plugins/manifest
-    settings:
-      spec: 15.3/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    when:
-      status: [success, failure]
-  - name: manifest-15.4
-    image: plugins/manifest
-    settings:
-      spec: 15.4/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    when:
-      status: [success, failure]
-  - name: manifest-15.5
-    image: plugins/manifest
-    settings:
-      spec: 15.5/manifest-spec.yml
-      username: andreipoe
-      password:
-        from_secret: docker_token
-    when:
-      status: [success, failure]
   - name: manifest-15.6
     image: plugins/manifest
     settings:
       spec: 15.6/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    when:
+      status: [success, failure]
+  - name: manifest-15.7
+    image: plugins/manifest
+    settings:
+      spec: 15.7/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+    when:
+      status: [success, failure]
+  - name: manifest-16.0
+    image: plugins/manifest
+    settings:
+      spec: 16.0/manifest-spec.yml
       username: andreipoe
       password:
         from_secret: docker_token
@@ -319,6 +185,6 @@ trigger:
 
 ---
 kind: signature
-hmac: a81354d004790728c37e6b6c8fbc58396da1bbcbf8d818fe0e00caf40fe1cbf1
+hmac: 35bfbaaeb1320efe85f951abea634ee0d6f705b7efd584795738036992c9e7f6
 
 ...
