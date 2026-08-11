@@ -38,6 +38,7 @@ RUN zypper install -y \
     && zypper clean --all
 
 # byacc is not available in the SLES 15.7 repo
-RUN wget https://download.opensuse.org/repositories/devel:/tools:/compiler/15.6/x86_64/byacc-20260126-lp156.70.1.x86_64.rpm && \
-    rpm -i byacc-20260126-lp156.70.1.x86_64.rpm && \
-    rm -f byacc-20260126-lp156.70.1.x86_64.rpm
+RUN rpmname="byacc-20260126-lp156.70.1.$(uname -m).rpm" && \
+    wget "https://download.opensuse.org/repositories/devel:/tools:/compiler/15.6/$(uname -m)/$rpmname" && \
+    rpm -i "$rpmname" && \
+    rm -f "$rpmname"
